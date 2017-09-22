@@ -14,5 +14,4 @@ export default class PlayListItem extends Component{
             </div>
         )
     }
-
 }

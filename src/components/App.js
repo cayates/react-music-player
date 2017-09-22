@@ -5,6 +5,7 @@ import NavBar from './NavBar';
 import PlayListForm from './PlayListForm';
 import PlayList from './PlayList';
 
+
 class App extends Component {
 
   constructor(){
@@ -12,13 +13,6 @@ class App extends Component {
     this.state = {
       songInfo: []
     }
-  }
-
-  _addNewSong = (songData) => {
-    let songInfo = this.state.songInfo;
-    songInfo.push(songData)
-    this.setState({songInfo: songInfo})
-
   }
 
   render() {

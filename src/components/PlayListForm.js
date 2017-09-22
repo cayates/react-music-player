@@ -6,7 +6,7 @@ export default class PlayListForm extends Component {
     constructor(){
         super();
         this.state = {
-            username:'',
+            userName:'',
             songArtist:'',
             songTitle:'',
             songNotes:''
@@ -50,14 +50,14 @@ export default class PlayListForm extends Component {
            songTitle: this.state.songTitle,
            songNotes: this.state.songNotes
         }
-        this.props.addNewSong(songData)
+        this.props.addToList(songData)
      }
 
 
     render(){
         return(
             <div className="test">
-            <form className = "play-list-form" onSubmit={this._handleSubmit}>
+            <form className = "play-list-form" onSubmit={this.addToList}>
             <h3>Username:</h3>
             <input type="text" name="userName" placeholder="Name or Username" onChange={this._handleChange} value={this.state.userName} />
             <h3>Artist/Band:</h3>
