@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 
+import PlayListItem from './PlayListItem';
+
 export default class PlayList extends Component{
+
+    constructor(){
+        super()
+        this.state={
+            songs: []
+        }
+    }
 
     componentDidMount(){
         fetch('https://tiny-lasagna-server.herokuapp.com/collections/playlisting').then(results => {
@@ -11,8 +20,8 @@ export default class PlayList extends Component{
           })
      }
 
-     fetchData = (event) => {
-        event.preventDefault();
+     fetchData = (e) => {
+        e.preventDefault();
         fetch('https://tiny-lasagna-server.herokuapp.com/collections/playlisting').then(results => {
           return results.json();
         }).then(data => {
@@ -20,31 +29,18 @@ export default class PlayList extends Component{
         })
       }
 
-      addToList = (e) => {
-        e.preventDefault();
-        this.setState({userName: e.target.value, songTitle: e.target.value, songArtist: e.target.value, songNotes: e.target.value});
-        let listItem = JSON.stringify(this.state);
-    
-        fetch("https://tiny-lasagna-server.herokuapp.com/collections/playlisting", {
-          method: "POST",
-          body: listItem,
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }
-      }
-      ).then(response => {
-        console.log(response, "yay");
-    
-      }).catch(err => {
-        console.log(err, "boo!");
-      });
-      this.setState({userName: '', songNotes: '', songArtist: '', songTitle:''});
-    }
-
     render(){
         return(
-            <div>Playlist items should go here ...</div>
+            <div className = "playList">
+                {this.state.songs.map((songInfo)=>{
+                    return(
+                        <PlayListItem 
+                        key={this.state.songs._id}
+                        songInfo={songInfo}
+                        />
+                    )
+                })}
+            </div>
         )
     }
 }

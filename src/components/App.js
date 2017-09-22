@@ -14,13 +14,25 @@ class App extends Component {
     }
   }
 
+  _addNewSong = (songData) => {
+    let songInfo = this.state.songInfo;
+    songInfo.push(songData)
+    this.setState({songInfo: songInfo})
+
+  }
 
   render() {
     return (
       <div className="App">
         <NavBar />
-        <PlayListForm />
-        <PlayList />
+      <div className = "playlistdata">
+        <PlayListForm 
+          addNewSong={this._addNewSong}
+        />
+        <PlayList 
+          songInfo={this.state.songInfo}
+        />
+      </div>
       </div>
     );
   }
