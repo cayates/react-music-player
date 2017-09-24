@@ -56,20 +56,18 @@ export default class PlayListForm extends Component {
 
     render(){
         return(
-            <div className="test">
             <form className = "play-list-form" onSubmit={this.addToList}>
-            <h3>Username:</h3>
+            <h5>Username:</h5>
             <input type="text" name="userName" placeholder="Name or Username" onChange={this._handleChange} value={this.state.userName} />
-            <h3>Artist/Band:</h3>
-            <input type="text" name="songArtist" placeholder="Name or Username" onChange={this._handleChange} value={this.state.songArtist} />
-            <h3>Song title:</h3>
-            <input type="text" name="songTitle" placeholder="Name or Username" onChange={this._handleChange} value={this.state.songTitle} />
-            <h3>Notes about song:</h3>
-            <textarea name="songNotes" rows="10" cols="50" placeholder="Place any notes here ..." onChange={this._handleChange} value={this.state.songNotes} />
+            <h5>Artist/Band:</h5>
+            <input type="text" name="songArtist" placeholder="Song Artist" onChange={this._handleChange} value={this.state.songArtist} />
+            <h5>Song title:</h5>
+            <input type="text" name="songTitle" placeholder="Song Title" onChange={this._handleChange} value={this.state.songTitle} />
+            <h5>Notes about song:</h5>
+            <textarea name="songNotes" rows="5" cols="50" placeholder="Place any notes here ..." onChange={this._handleChange} value={this.state.songNotes} />
             <br />
-            <input className = "submitButton" type="submit" value="Submit" />
+            <input className = "btn btn-secondary" type="submit" value="Submit" />
             </form>
-            </div>
         )
     }
 }

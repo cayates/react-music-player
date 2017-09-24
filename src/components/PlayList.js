@@ -32,7 +32,7 @@ export default class PlayList extends Component{
     render(){
         return(
             <div className = "playList">
-                <input className = "submitButton" type="submit" value="Update List" onClick={this.fetchData}/>
+                <input className = "btn btn-secondary" type="submit" value="Update List" onClick={this.fetchData}/>
                 {this.state.songs.map((songInfo)=>{
                     return(
                         <PlayListItem 

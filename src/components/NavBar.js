@@ -5,9 +5,11 @@ export default class NavBar extends Component{
 
     render(){
         return(
-            <div>
+            <div className = "navbar">
+                <div className="jumbotron d-flex align-items-center flex-title">
                 <h1>Chad's Music Player</h1>
-                <p>What you jammin', bro?</p>
+                <h4>What you jammin', bro?</h4>
+                </div>
             </div>
         )
     }
