@@ -22,7 +22,7 @@ h5 {
 }
 
 .h-scroll {
-  height: 70vh;
+  height: 57vh;
   position: fixed;
   overflow-y: scroll;
 }

@@ -7,7 +7,7 @@ export default class NavBar extends Component{
         return(
             <div className = "navbar">
                 <div className="jumbotron d-flex align-items-center flex-title">
-                <h1>Chad's Music Player</h1>
+                <h1>dopeTunes</h1>
                 <h4>What you jammin', bro?</h4>
                 </div>
             </div>

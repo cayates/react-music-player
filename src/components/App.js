@@ -27,7 +27,7 @@ class App extends Component {
         />
           </div>
           <div className = "col">
-            <div className="col-lg-4 h-scroll resize-height">
+            <div className="col-lg-4 h-scroll">
         <PlayList 
           songInfo={this.state.songInfo}
         />
